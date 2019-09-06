@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+    </style>
+
+    <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+</head>
+<body>
+
+<div id="helloVue">
+
+    <div class="bg">
+
+        Hello world !
+        {{msg}}
+    </div>
+
+    <div class="bg">
+
+        Hello world !
+        {{msg}}
+    </div>
+
+</div>
+
+</body>
+
+<script>
+
+    new Vue({
+
+        el: '#helloVue',
+        data: {
+
+            msg: 'hello vue'
+        }
+
+    })
+
+</script>
+</html>
