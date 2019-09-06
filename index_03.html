@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2-4 计算属性与侦听器</title>
+
+    <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+</head>
+<body>
+
+<div id="divTestWatchComputed">
+
+    {{msg}}
+
+    <div>{{msgComputed}}</div>
+</div>
+
+</body>
+
+<script>
+
+    var outsideData = 'outSide'
+
+    var testWatchComputed = new Vue({
+
+        el: '#divTestWatchComputed',
+
+        data: {
+
+            msg: 'hello vue 3',
+
+            another: 'appended value ',
+
+        },
+
+        watch: {
+
+            msg: function (newValue, oldValue) {
+
+                console.log('new value ' + newValue)
+                console.log('old value ' + oldValue)
+
+            }
+
+        },
+
+        computed: {
+
+            msgComputed: function () {
+
+                return ' computed: ' + this.msg + '  ' + this.another + ' ' + outsideData;
+
+            }
+        },
+
+    });
+
+</script>
+</html>
