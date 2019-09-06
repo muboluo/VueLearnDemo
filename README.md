@@ -38,5 +38,14 @@
     nvm 就是用来管理node version的。
     
     nvm --help 
+    
+    
+### note 
+
+    1 页面上所有的变量，其实都可以包含在vue 的data对象中。
+    
+    2 绑定属性，可以缩写为双冒号。eg:v-bind:href/id/...
+    
+    3. 绑定时间可以使用@代替 v-on:
          
     

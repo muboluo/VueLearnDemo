@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>2-3模板语法</title>
+
+    <style>
+
+        .bg {
+            color: red;
+        }
+    </style>
+
+    <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+</head>
+<body>
+
+<div id="helloVue">
+
+    <div class="bg" v-bind:id="tempId">
+
+        Hello world !
+        {{msg}}
+    </div>
+
+    <div class="bg">
+
+        Hello world !
+        {{msg}}
+    </div>
+
+    {{count}}
+    {{count *10}}
+
+    <div v-html="divTemplate"></div>
+
+    <a v-bind:href="urlBaidu">百度</a>
+    <a :href="urlBaidu">百度</a>
+
+    <button type="button" v-on:click="submit()">按钮</button>
+    <button type="button" @click="submit()">按钮</button>
+
+</div>
+
+</body>
+
+<script>
+
+    new Vue({
+
+        el: '#helloVue',
+        data: {
+
+            tempId: 'hello1',
+
+            msg: 'hello vue',
+            count: 1,
+
+            urlBaidu: 'http://www.baidu.com',
+
+            divTemplate: '<div>hello div template </div>',
+
+        },
+        methods: {
+
+            submit: function () {
+
+                this.count++;
+            },
+        },
+
+    });
+
+</script>
+</html>
