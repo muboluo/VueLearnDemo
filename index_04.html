@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2-5 条件渲染 列表渲染 class 与 style的绑定</title>
+
+    <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+</head>
+<body>
+
+<div id="divTestVIf">
+
+    <div v-show=" count >3 " :style="styleCount">{{msg}}</div>
+
+    <div v-for="test in testFor">{{test}}</div>
+
+    <div v-for="test2 in testForValue">{{test2.name}}</div>
+
+    <div v-for="test3 in testForValue">
+
+        <div v-if="test3.value >99">{{test3.name}}</div>
+        <div v-else>{{test3.value}}</div>
+
+    </div>
+
+</div>
+
+</body>
+
+<script>
+
+    var testVIfFor = new Vue({
+
+        el: '#divTestVIf',
+
+        data: {
+
+            msg: 'hello vue',
+
+            count: 4,
+
+            testFor: [0, 1, 2, 3, 4],
+
+            testForValue: [{
+                name: 'test001',
+                value: 100
+            }, {
+                name: 'test002',
+                value: 99
+            }],
+
+            styleCount: {
+
+                color: 'red',
+                textShadow: '0 0 5px green'
+            },
+
+        },
+
+    });
+
+</script>
+</html>
