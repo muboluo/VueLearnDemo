@@ -41,7 +41,19 @@
 @表示工程的根路径。若需要访问子路径中的内容，需要在@后添加/。
 不是直接添加子路径名。
 
+遇到的bug 提示： module not found:error:can't resolve xxx
+
     eg: @/xxx
+    
+    
+#### 3. 安装 vue cli工具，
+
+若在命令行执行完安装命令后，vue 命令一直报错 command not fount vue.
+
+是node/bin 没有导出。 查找到 该位置，export 即可。
+
+    export PATH="$PATH:/usr/local/Cellar/node/8.9.1/bin"
+
      
             
         
