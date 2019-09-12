@@ -161,8 +161,15 @@
                 代码实现、测试（10%）、线上部署
                 
                 
+                
+                
+                
             
-            
+       4.3 如何学习和参考某些网站的代码
+       
+            1. chrome 查看DOM结构
+            2. header body 里查看 js/css 引用，google/百度 搜索相应的js库
+            3. 查看sources， network 中的js， 使用发编译和断点进行调试。
             
             
         
