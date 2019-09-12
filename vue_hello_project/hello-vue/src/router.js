@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import Login from './views/Login.vue'
 import Home from './views/Home.vue'
 
 Vue.use(Router)
@@ -8,25 +9,36 @@ export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
+
     {
       path: '/',
-      name: 'home',
-      component: Home
+      name: 'Login',
+      component: Login
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
-    },{
-      path: '/Info',
-      name: 'info',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/Info.vue')
+      path: '/Home',
+      name: 'Home',
+      component: Home,
+      children: [
+
+        {
+          path: 'List',
+          name: 'List',
+          component: () => import(/* webpackChunkName: 'List' */ './views/List.vue')
+          // 这种形式是懒加载
+        },
+        {
+          path: 'User',
+          name: 'User',
+          component: () => import(/* webpackChunkName: 'User' */ './views/User.vue')
+        }
+      ]
+    },
+    {
+      path: '/Add',
+      name: 'Add',
+      component: () => import('./views/Add.vue')
+
     }
   ]
 })

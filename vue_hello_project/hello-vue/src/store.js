@@ -6,14 +6,23 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
 
-    //建议共用属性才添加到这里。
+    lists: [],
+
+    // 建议共用属性才添加到这里。
     count: 0
 
   },
   mutations: {
 
-    addOne () {
+    addOne() {
       this.state.count++
+    },
+
+    addItem(state, value) {
+
+      state.lists.push(value)
+      console.log('addItem' + value)
+      console.log('addItem list ' + state.lists)
     }
   },
   actions: {}
