@@ -28,6 +28,7 @@
       logPercent() {
 
         console.log('add event')
+        debugger
         store.commit('addOne')
       }
     },
